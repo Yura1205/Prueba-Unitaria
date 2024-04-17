@@ -1,5 +1,10 @@
-const sum = require('./email');
+const validEmail = require('./email');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('Validar correo electrónico válido', () => {
+  expect(validEmail("ledysy.torresr@unac.edu.co")).toBe("ledysy.torresr@unac.edu.co");
+  expect(validEmail("yurayny12@gmail.com")).toBe("yurayny12@gmail.com");
+});
+
+test('Validar correo electrónico inválido', () => {
+  expect(validEmail("correoInvalido@")).not.toBe("correoValido@gmail.com");
 });

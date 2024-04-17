@@ -1,5 +1,5 @@
-function email(correo) {
+function obtenerEmail(correo) {
     return correo;
 }
 
-module.exports = email;
+module.exports = obtenerEmail;
