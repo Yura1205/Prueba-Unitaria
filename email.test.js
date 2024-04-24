@@ -1,10 +1,11 @@
-const validEmail = require('./email');
+const validarCorreoElectronico = require('./email');
 
 test('Validar correo electrónico válido', () => {
-  expect(validEmail("ledysy.torresr@unac.edu.co")).toBe("ledysy.torresr@unac.edu.co");
-  expect(validEmail("yurayny12@gmail.com")).toBe("yurayny12@gmail.com");
+  expect(validarCorreoElectronico("ledysy.torresr@gmail.com")).toBe(true);
+  expect(validarCorreoElectronico("yurayny12@gmail.com")).toBe(true);
 });
 
-test('Validar correo electrónico inválido', () => {
-  expect(validEmail("correoInvalido@")).not.toBe("correoValido@gmail.com");
+test('Validar correo electrónico no válido', () => {
+  expect(validarCorreoElectronico("correoinvalido@dominio")).toBe(false);
+  expect(validarCorreoElectronico("correo@invalido")).toBe(false);
 });
